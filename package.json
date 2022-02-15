@@ -2,5 +2,9 @@
   "main": "app.js",
   "dependencies": {
     "yaml": "^1.10.2"
+  },
+  "scripts": {
+    "build": "npx pkg app.js",
+    "start": "node app.js"
   }
 }
