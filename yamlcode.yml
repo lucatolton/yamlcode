@@ -1,0 +1,11 @@
+run:
+  - print(hello)
+  - error(error occured)
+  - store(one, Hello world!)
+  - get(one)
+  - if(one, two):
+    - print(One is equal to two)
+  - ifnot(one, two):
+    - print(One is not equal to two)
+  - test(hello world)
+  #- exit

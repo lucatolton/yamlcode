@@ -53,9 +53,9 @@ function runCode(item, toExec, execData) {
                 let todo = key.slice(3).slice(0, -1);
                 todo = todo.split(' ');
                 let itemOne = variables.find(item => item.name === todo[0]);
-                let itemTwo = variables.find(item => item.name === todo[2]);
+                let itemTwo = variables.find(item => item.name === todo[1]);
                 if (!itemOne || !itemTwo) {
-                    console.log('[ERROR] Variable \'' + todo[0] + '\' or \'' + todo[2] + '\' does not exist');
+                    console.log('[ERROR] Variable \'' + todo[0] + '\' or \'' + todo[1] + '\' does not exist');
                     break;
                 }
                 if (itemOne.value === itemTwo.value) {
@@ -70,9 +70,9 @@ function runCode(item, toExec, execData) {
                 let todo = key.slice(6).slice(0, -1);
                 todo = todo.split(' ');
                 let itemOne = variables.find(item => item.name === todo[0]);
-                let itemTwo = variables.find(item => item.name === todo[2]);
+                let itemTwo = variables.find(item => item.name === todo[1]);
                 if (!itemOne || !itemTwo) {
-                    console.log('[ERROR] Variable \'' + todo[0] + '\' or \'' + todo[2] + '\' does not exist');
+                    console.log('[ERROR] Variable \'' + todo[0] + '\' or \'' + todo[1] + '\' does not exist');
                     break;
                 }
                 if (itemOne.value !== itemTwo.value) {
@@ -85,6 +85,8 @@ function runCode(item, toExec, execData) {
         case 'exit':
             console.log('[EXIT] Exiting...');
             process.exit(1);
+        default:
+            console.log('[YAMLCODE] Invalid function \'' + toExec + '\'');
     }
 }
 
